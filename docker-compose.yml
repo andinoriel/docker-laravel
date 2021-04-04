@@ -12,9 +12,9 @@ services:
     networks:
       - app-network
 
-  mysql-host:
+  mysql:
     image: mysql:5.7
-    container_name: mysql-host
+    container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
@@ -34,7 +34,7 @@ services:
       - "80:80"
     depends_on:
       - php
-      - mysql-host
+      - mysql
     volumes:
       - ./src:/var/www/html:delegated
     networks:
@@ -69,7 +69,7 @@ services:
     volumes:
       - ./src:/var/www/html:delegated
     depends_on:
-      - mysql-host
+      - mysql
     working_dir: /var/www/html
     user: laravel
     entrypoint: ['php', '/var/www/html/artisan']
@@ -80,12 +80,12 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     environment:
-      PMA_HOST: mysql-host
+      PMA_HOST: mysql
       PMA_PORT: 3306
     ports:
       - "3309:80"
     depends_on:
-      - mysql-host
+      - mysql
     networks:
       - app-network
 
