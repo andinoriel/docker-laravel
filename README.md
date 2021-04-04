@@ -27,7 +27,7 @@ $ cp src/.env.example src/.env
 ```
 $ docker-compose run --rm artisan key:generate
 ```
-8.  You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309
+8.  You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309 (root/root)
 
 ## Other
 
