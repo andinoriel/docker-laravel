@@ -17,7 +17,7 @@ $ docker-compose run --rm npm i
 ```
 5. Run the application using the command:
 ```
-$ docker-compose up -d --build nginx phpmyadmin
+$ docker-compose up -d nginx phpmyadmin
 ```
 6. Create your own .env file by copying .env.example:
 ```
@@ -27,7 +27,11 @@ $ cp src/.env.example src/.env
 ```
 $ docker-compose run --rm artisan key:generate
 ```
-8.  You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309 (root/root)
+8. You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309
+9. After finishing work, stop running containers:
+```
+$ docker-compose down
+```
 
 ## Other
 
