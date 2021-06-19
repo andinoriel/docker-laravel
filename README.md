@@ -8,16 +8,16 @@ This project provides you a working laravel environment without requiring you to
 2. Clone this project and then cd to the project folder;
 3. Run the initial build of the environment:
 ```
-$ docker-compose build
+$ make init
 ```
 4. Install all composer and npm dependencies:
 ```
-$ docker-compose run --rm composer i
-$ docker-compose run --rm npm i
+$ make composer i
+$ make npm i
 ```
 5. Run the application using the command:
 ```
-$ docker-compose up -d nginx phpmyadmin
+$ make up
 ```
 6. Create your own .env file by copying .env.example:
 ```
@@ -25,21 +25,21 @@ $ cp src/.env.example src/.env
 ```
 7. Generate the unique application key:
 ```
-$ docker-compose run --rm artisan key:generate
+$ make artisan key:generate
 ```
 8. You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309
-9. After finishing work, stop running containers:
+9. After finishing work, you can stop running containers:
 ```
-$ docker-compose down
+$ make down
 ```
 
 ## Other
 
 If necessary, you can independently use composer, artisan or npm with the following commands:
 ```
-$ docker-compose run --rm composer ...
-$ docker-compose run --rm artisan ...
-$ docker-compose run --rm npm ...
+$ make composer ...
+$ make artisan ...
+$ make npm ...
 ```
 
 ## License
