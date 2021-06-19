@@ -22,7 +22,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./mysql:/var/lib/mysql    
+      - ./mysql:/var/lib/mysql
     networks:
       - app-network
 
@@ -53,7 +53,7 @@ services:
     networks:
       - app-network
     entrypoint: ['composer', '--ignore-platform-reqs']
-  
+
   npm:
     image: node:latest
     container_name: npm
@@ -61,7 +61,7 @@ services:
       - ./src:/var/www/html
     working_dir: /var/www/html
     entrypoint: ['npm']
-  
+
   artisan:
     build:
       context: ./docker/php
