@@ -1,3 +1,5 @@
+%:
+	@:
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 
 
@@ -21,7 +23,7 @@ build:
 
 
 composer:
-	docker-compose run --rm npm $(call args,"")
+	docker-compose run --rm composer $(call args,"")
 
 artisan:
 	docker-compose run --rm artisan $(call args,"")
