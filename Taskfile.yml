@@ -1,0 +1,45 @@
+version: "3"
+
+tasks:
+  init:
+    cmds:
+      - task: down
+      - task: pull
+      - task: build
+
+  restart:
+    cmds:
+      - task: down
+      - task: up
+
+  up:
+    cmds:
+      - docker-compose up -d nginx phpmyadmin
+
+  stop:
+    cmds:
+      - docker-compose stop
+
+  down:
+    cmds:
+      - docker-compose down -v --remove-orphans
+
+  pull:
+    cmds:
+      - docker-compose pull
+
+  build:
+    cmds:
+      - docker-compose build
+
+  composer:
+    cmds:
+      - docker-compose run --rm composer {{.CLI_ARGS}}
+
+  artisan:
+    cmds:
+      - docker-compose run --rm artisan {{.CLI_ARGS}}
+
+  npm:
+    cmds:
+      - docker-compose run --rm npm {{.CLI_ARGS}}
