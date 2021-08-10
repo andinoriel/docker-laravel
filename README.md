@@ -24,19 +24,11 @@ $ task npm -- i
 $ task up
 ```
 
-6. Create your own .env file by copying .env.example:
-```
-$ cp src/.env.example src/.env
-```
+6. Manually open the ./src/.env file, find the `DB_HOST=127.0.0.1` line and change it to `DB_HOST=mysql`
 
-7. Generate the unique application key:
-```
-$ task artisan -- key:generate
-```
+7. You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309
 
-8. You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309
-
-9. After finishing work, you can stop running containers:
+8. After finishing work, you can stop running containers:
 ```
 $ task down
 ```

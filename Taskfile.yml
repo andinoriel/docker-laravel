@@ -6,6 +6,7 @@ tasks:
       - task: down
       - task: pull
       - task: build
+      - task: init-laravel
 
   restart:
     cmds:
@@ -43,3 +44,8 @@ tasks:
   npm:
     cmds:
       - docker-compose run --rm npm {{.CLI_ARGS}}
+
+  init-laravel:
+    cmds:
+      - mkdir ./src
+      - docker-compose run --rm composer create-project laravel/laravel .
