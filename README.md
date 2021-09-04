@@ -24,11 +24,15 @@ $ task npm -- i
 $ task up
 ```
 
-6. Manually open the ./src/.env file, find the `DB_HOST=127.0.0.1` line and change it to `DB_HOST=mysql`
+6. Replace the `src/.env` file by moving `.env.example` into the `src` folder:
+```
+$ mv -f .env.example src/.env
+```
+> You also can just manually open the ./src/.env file, find the `DB_HOST=127.0.0.1` line and change it to `DB_HOST=mysql`
 
 7. You've done! Main page is available on http://localhost, phpMyAdmin - http://localhost:3309
 
-8. After finishing work, you can stop running containers:
+8. After finishing work, stop the running containers:
 ```
 $ task down
 ```
